@@ -1,0 +1,57 @@
+version: "3"
+services:
+  back:
+    build:
+      context: .
+      dockerfile: ./docker/back/Dockerfile
+    container_name: back
+    tty: true
+    volumes:
+      - ./:/src/back
+    env_file:
+      - .env
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    networks:
+      - go_network
+
+  front:
+    build:
+      context: .
+      dockerfile: ./docker/front/Dockerfile
+    container_name: front
+    tty: true
+    environment:
+      - NODE_ENV=development
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/src/front
+    depends_on:
+      - db
+    networks:
+      - go_network
+
+  db:
+    build:
+      context: .
+      dockerfile: ./docker/mysql/Dockerfile
+    container_name: db
+    env_file:
+      - .env
+    ports:
+      - "3306:3306"
+    volumes:
+      - db:/var/lib/mysql
+      - ./database/sql:/docker-entrypoint-initdb.d
+    networks:
+      - go_network
+
+volumes:
+  db:
+
+networks:
+  go_network:
+    external: true
