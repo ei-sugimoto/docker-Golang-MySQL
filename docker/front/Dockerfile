@@ -1,7 +1,10 @@
-FROM node:18.15.0-bullseye-slim
+FROM node:20.11.0-alpine
+
+RUN apk update && apk add git
 
 WORKDIR /src/front
 
 COPY ../../frontend/package*.json ./
 
 RUN npm install
+

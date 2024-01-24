@@ -33,6 +33,6 @@ back-logs:
 back-serve:
 	docker-compose exec back sh -c 'go run cmd/main.go'
 front-serve:
-	docker-compose exec front bash -c 'npm run dev'
+	docker-compose exec front sh -c 'npm run dev'
 
 
