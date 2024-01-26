@@ -18,4 +18,6 @@ jobs:
         run: |
           docker network create golang_test_network
           docker-compose up -d --build
-          docker-compose exec -T server go test -v @/src/back/...
+          docker-compose exec -T server ash
+          cd back
+          go test -v ./...
