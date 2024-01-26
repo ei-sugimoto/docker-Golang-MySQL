@@ -10,15 +10,13 @@ Basic construction of a database and API server using MySQL and Golang on Docker
 
 # Features
 
-"hoge"のセールスポイントや差別化などを説明する
+- masterブランチにpull requestもしくはpush時にactionsでDBとのテスト実行 \
+  Executing database tests with actions upon pull requests or pushes to the master branch⏩
+- 任意のブランチにpushもしくはpull request時にactionsでlint実行\
+  Executing linting with actions when pushing to any branch or upon pull requests🔎
 
 # Requirement
-
-"hoge"を動かすのに必要なライブラリなどを列挙する
-
-* huga 3.5.2
-* hogehuga 1.0.2
-
+* At least docker 24.0.7
 # Installation
 ```bash
 git clone git@github.com:ei-sugimoto/GistsBoard.git
@@ -26,11 +24,10 @@ git clone git@github.com:ei-sugimoto/GistsBoard.git
 
 # Usage
 
-DEMOの実行方法など、"hoge"の基本的な使い方を説明する
-
 ```bash
 docker compose up -d --build
 ```
+Access ```localhost:8080```
 
 # Note
 
