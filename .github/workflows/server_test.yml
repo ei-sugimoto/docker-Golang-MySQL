@@ -1,0 +1,22 @@
+# This is a basic workflow to help you get started with Actions
+name: docker-compose
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  push:
+    branches: [ master]
+  pull_request:
+    branches: [ master, develop ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: compose-run
+        shell: bash
+        run: |
+          docker network create golang_test_network
+          docker-compose up -d --build
+          docker-compose exec -T server ash -c "cd back && go test -v ./..."
