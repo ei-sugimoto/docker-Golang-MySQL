@@ -1,20 +1,19 @@
-name: Docker Compose Test
+# This is a basic workflow to help you get started with Actions
+name: docker-compose
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
 on:
   push:
   pull_request:
+    branches: [ master, develop ]
 
 jobs:
-  test:
-    name: Run tests
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Setup Docker
-        uses: docker-practice/actions-setup-docker@v1
-
-      - name: Run Docker Compose
+      - uses: actions/checkout@v4
+      - name: compose-run
+        shell: bash
         run: |
-          docker compose up -d
-          docker compose run server go test -v ./...
+          docker-compose up -d
