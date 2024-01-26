@@ -15,11 +15,11 @@ services:
       - db
     volumes:
       - type: bind
-        source: ./back
-        target: /go/src/
+        source: . 
+        target: /src
       - type: bind
         source: .git
-        target: /go/src/.git
+        target: /src/.git
     networks:
       - golang_test_network
 
