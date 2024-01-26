@@ -38,6 +38,8 @@ services:
       - type: volume
         source: mysql_test_volume
         target: /var/lib/mysql
+      - ./db/migration:/docker-entrypoint-initdb.d
+      - ./my.cnf:/etc/mysql/conf.d/my.cnf
     networks:
       - golang_test_network
 
