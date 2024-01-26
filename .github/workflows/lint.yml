@@ -16,5 +16,6 @@ jobs:
       - name: compose-run
         shell: bash
         run: |
-          docker-compose up -d --build
           docker network create golang_test_network
+          docker-compose up -d --build
+          
