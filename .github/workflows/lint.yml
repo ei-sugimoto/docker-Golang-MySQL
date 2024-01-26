@@ -16,5 +16,5 @@ jobs:
 
       - name: Run Docker Compose
         run: |
-          docker-compose up -d
-          docker-compose run server go test -v ./...
+          docker compose up -d
+          docker compose run server go test -v ./...
