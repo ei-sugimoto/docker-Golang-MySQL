@@ -4,10 +4,6 @@ Docker上でMySQLとGolangを使ったDBとAPIサーバの基本的な構築
 
 Basic construction of a database and API server using MySQL and Golang on Docker 👋
 
-# DEMO
-
-"hoge"の魅力が直感的に伝えわるデモ動画や図解を載せる
-
 # Features
 
 - masterブランチにpull requestもしくはpush時にactionsでDBとのテスト実行 \
@@ -27,7 +23,7 @@ git clone git@github.com:ei-sugimoto/GistsBoard.git
 ```bash
 docker compose up -d --build
 ```
-Access ```localhost:8080```
+Access to ```localhost:8080```
 
 # Note
 
