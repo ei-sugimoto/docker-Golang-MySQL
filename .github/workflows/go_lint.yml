@@ -19,4 +19,5 @@ jobs:
         working-directory: back
       - name: Nancy
         uses: sonatype-nexus-community/nancy-github-action@main
-        working-directory: back
+        with:
+          working-directory: back
