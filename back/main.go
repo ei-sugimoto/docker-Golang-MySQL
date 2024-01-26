@@ -52,7 +52,10 @@ func getUsers() []*User {
 
 func usersPage(w http.ResponseWriter, r *http.Request) {
 	users := getUsers()
-	json.NewEncoder(w).Encode(users)
+	err := json.NewEncoder(w).Encode(users)
+	if err != nil {
+		panic(err)
+	}
 }
 
 func main() {
