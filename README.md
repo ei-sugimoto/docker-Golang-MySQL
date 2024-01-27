@@ -41,7 +41,5 @@ or
 docker.exe compose up -d --build #windows
 ```
 
-## Licence
-
-[MIT]
-
+## License
+MIT
