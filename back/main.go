@@ -22,7 +22,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 }
 
 func getUsers() []*User {
-	db, err := sql.Open("mysql", "tester:password@tcp(db:3306)/GistsBoard")
+	db, err := sql.Open("mysql", "tester:password@tcp(db:3306)/testDB")
 
 	if err != nil {
 		log.Println("CANT CONNECT TO DB")
