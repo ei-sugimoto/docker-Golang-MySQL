@@ -1,4 +1,4 @@
-version: '3.8'
+version: "3.8"
 
 services:
   server:
@@ -15,7 +15,7 @@ services:
       - db
     volumes:
       - type: bind
-        source: . 
+        source: .
         target: /src
       - type: bind
         source: .git
@@ -39,7 +39,6 @@ services:
         source: mysql_test_volume
         target: /var/lib/mysql
       - ./db/migration:/docker-entrypoint-initdb.d
-      - ./my.cnf:/etc/mysql/conf.d/my.cnf
     networks:
       - golang_test_network
 
