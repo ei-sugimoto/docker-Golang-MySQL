@@ -1,9 +1,9 @@
-name: vulns
+name: lint
 on:
   push:
   pull_request:
 jobs:
-  vulns:
+  lint:
     name: Vulnerability scanner
     runs-on: ubuntu-latest
     steps:
