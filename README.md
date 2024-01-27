@@ -1,3 +1,6 @@
+![example workflow](https://github.com/ei-sugimoto/docker-Golang-MySQL/actions/workflows/server_test.yml/badge.svg)
+![example workflow](https://github.com/ei-sugimoto/docker-Golang-MySQL/actions/workflows/go_lint.yml/badge.svg)
+
 # docker-MySQL-Golang     [![My Skills](https://skillicons.dev/icons?i=mysql,go,docker)](https://skillicons.dev)
 
 
